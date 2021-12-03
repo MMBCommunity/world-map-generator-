@@ -28,6 +28,7 @@ pointerZ = 0
 
 pygame.init()
 screen = pygame.display.set_mode((int(scanSizeX),int(scanSizeY)))
+run = True
 
 print("\nStarted!\n")
 while pointerZ <= int(scanSizeY):
@@ -59,5 +60,5 @@ while pointerZ <= int(scanSizeY):
 pygame.display.update()
 print("\nDone!\n")
 
-while True: # so not crash
+while run: # so updates 
   pygame.display.update()
