@@ -3,6 +3,7 @@ import bedrock
 import pygame
 
 worldFolderPath = "C:\\Users\\Owner\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\minecraftWorlds\\"
+worldFolderPathBL = "C:\\Users\\Owner\\AppData\\Roaming\\.minecraft_bedrock\\installations\\Normal\1.17\\packageData\\minecraftWorlds\\"
 
 print("\nVersion Info:\nGame version support 1.17\nEffeiency model v2\n")
 print("Asking Some Basic Info")
@@ -33,10 +34,7 @@ run = True
 print("\nStarted!\n")
 while pointerZ <= int(scanSizeY):
   with bedrock.World(worldFullName) as world:
-    while str(world.getBlock(pointerX, pointerY, pointerZ, layer=0)) == "minecraft:air []":
-      pointerY -= 1
-
-    while str(world.getBlock(pointerX, pointerY, pointerZ, layer=0)) == "None":
+    while str(world.getBlock(pointerX, pointerY, pointerZ, layer=0)) == "None" or str(world.getBlock(pointerX, pointerY, pointerZ, layer=0)) == "minecraft:air []":
       pointerY -= 1
       
     block = str(world.getBlock(pointerX, pointerY, pointerZ))
